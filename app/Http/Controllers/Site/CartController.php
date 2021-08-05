@@ -46,6 +46,7 @@ class CartController extends Controller
         $shoes_offer = 0;
         $jaket_offer = 0;
         $discounts = [];
+        $total_costs = 0;
 
         $all_items= session()->get('basket');
 
@@ -86,9 +87,9 @@ class CartController extends Controller
 
         $total_tax = $total_cost * $tax;
 
-        $total_cost += $total_tax - $shoes_offer - $jaket_offer;
+        $total_costs = $total_cost + $total_tax - $shoes_offer - $jaket_offer;
          
-        return view('site.layouts.cart')->with(compact('products', 'total_cost', 'total_tax', 'discounts', 'values_discunts'));
+        return view('site.layouts.cart')->with(compact('products', 'total_cost', 'total_tax', 'discounts', 'values_discunts', 'total_costs'));
     }
 
     public function removeItem($index)

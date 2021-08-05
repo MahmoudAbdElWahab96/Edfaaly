@@ -60,7 +60,7 @@
                 </div>
                 <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
                     <div class="col">TOTAL PRICE</div>
-                    <div class="col text-right">&dollar; {{ $total_cost }}</div>
+                    <div class="col text-right">&dollar; {{ $total_costs }}</div>
                 </div> <button class="btn">CHECKOUT</button>
             </div>
         </div>
